@@ -1,0 +1,26 @@
+# Archivos de entorno de Python
+*.pyc
+*.pyo
+__pycache__/
+env/
+venv/
+*.env
+
+# Archivos de configuración de bases de datos locales (SQLite)
+instance/site.db
+
+# Archivos de migración de Alembic
+migrations/
+
+# Archivos de sistema operativo (MacOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos de compilación
+*.egg
+*.egg-info/
+dist/
+build/
