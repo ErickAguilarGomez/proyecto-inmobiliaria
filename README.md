@@ -48,23 +48,21 @@ El proyecto usa SQLite, por lo que se creará un archivo site.db dentro de la ca
 
 Inicializar las migraciones:
 
-   ```bash
-      flask db init
-   ```
+```bash
+flask db init
+```
 
 5. Realizar las migraciones:
-   ```bash
-flask db migrate
-   ```
+   flask db migrate
+
 6. Aplicar las migraciones:
-```bash
-flask db upgrade
-```
-7. Ejecutar la aplicación:
-Una vez que las dependencias estén instaladas y la base de datos esté configurada, puedes iniciar el servidor de desarrollo de Flask con el siguiente comando:
+   flask db upgrade
    
-  ```bash
-   flask run
-   ```
+7. Ejecutar la aplicación:
+   Una vez que las dependencias estén instaladas y la base de datos esté configurada, puedes iniciar el servidor de desarrollo de Flask con el siguiente comando:
+
+```bash
+ flask run
+```
 
 La aplicación estará disponible en http://127.0.0.1:5000/ por defecto. Abre esta URL en tu navegador para acceder a la aplicación.
