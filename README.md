@@ -38,9 +38,9 @@ Este proyecto está basado en Flask y utiliza varias bibliotecas para manejar ba
 3. Instalar las dependencias:
    Asegúrate de tener todas las bibliotecas necesarias instaladas ejecutando:
 
-   ```bash
+```bash
    pip install -r requirements.txt
-   ```
+```
 
 4. Configurar la base de datos:
 
@@ -53,10 +53,13 @@ flask db init
 ```
 
 5. Realizar las migraciones:
+```bash
    flask db migrate
-
+```
 6. Aplicar las migraciones:
+```bash
    flask db upgrade
+```
 7. Ejecutar la aplicación:
    Una vez que las dependencias estén instaladas y la base de datos esté configurada, puedes iniciar el servidor de desarrollo de Flask con el siguiente comando:
 
