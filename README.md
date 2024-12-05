@@ -57,7 +57,6 @@ flask db init
 
 6. Aplicar las migraciones:
    flask db upgrade
-   
 7. Ejecutar la aplicación:
    Una vez que las dependencias estén instaladas y la base de datos esté configurada, puedes iniciar el servidor de desarrollo de Flask con el siguiente comando:
 
@@ -66,3 +65,76 @@ flask db init
 ```
 
 La aplicación estará disponible en http://127.0.0.1:5000/ por defecto. Abre esta URL en tu navegador para acceder a la aplicación.
+
+# Instrucciones para interactuar con la API
+
+### 1. Crear un nuevo usuario
+
+**POST** `http://127.0.0.1:5000/crear_usuario`
+
+- **Descripción**: Aquí debes crear el usuario y asignarle uno de los siguientes roles: **cliente**, **agente** o **administrador**.
+
+```json
+{
+  "correo": "usuario1@gmail.com",
+  "nombre": "clienteusuario",
+  "password": "cliente",
+  "rol": "cliente"
+}
+
+2. Obtener lista de usuarios
+GET http://127.0.0.1:5000/usuarios
+
+3. Crear una cita
+POST http://127.0.0.1:5000/crear_cita
+
+Descripción: Solo un usuario con el rol usuario o administrador podrá crear citas.
+json
+
+{
+  "proyecto": "Inmobiliaria",
+  "consulta": "Quiero revisar los avances y entregables del proyecto",
+  "usuario_id": "1"
+}
+
+4. Obtener citas pendientes
+GET http://127.0.0.1:5000/citas_pendientes
+
+5. Obtener todas las citas
+GET http://127.0.0.1:5000/citas
+
+Descripción: En esta URL verás todas las citas, sean pendientes o no.
+
+6. Asignar una cita
+POST http://127.0.0.1:5000/asignar_cita/1
+
+Descripción: Solo un usuario con el rol administrador podrá asignar citas. El agente_id debe ser un usuario con el rol agente. Debes colocar el ID de la cita en la URL.
+json
+
+{
+  "correo": "usuario3@gmail.com",
+  "password": "administrador",
+  "agente_id": "2"
+}
+
+7. Cerrar una cita
+POST http://127.0.0.1:5000/cerrar_cita/1
+
+Descripción: Solo un agente podrá cerrar la cita. Debes colocar el ID de la cita en la URL.
+json
+
+{
+  "correo": "usuario2@gmail.com",
+  "password": "agente"
+}
+
+8. Reabrir una cita
+POST http://127.0.0.1:5000/abrir_cita/1
+
+Descripción: Solo un agente o administrador podrá reabrir una cita. Debes colocar el ID de la cita en la URL.
+json
+
+{
+  "correo": "usuario2@gmail.com",
+  "password": "agente"
+}
